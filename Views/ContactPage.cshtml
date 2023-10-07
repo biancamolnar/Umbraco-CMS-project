@@ -1,0 +1,73 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "_Layout.cshtml";
+    ViewData["PageTitle"] = @Model.Value("pageTitle");
+    ViewData["PageDescription"] = @Model.Value("pageDescription");
+    ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+
+    var contactForm = new Crito.Models.ContactForm();
+}
+
+ @await Html.PartialAsync("_NavSection")
+ 
+ @await Html.PartialAsync("_BreadcrumbSection")
+
+    <!-- contact information-->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="info-text">
+                        <h3>Visit us</h3>
+                        <p>@Model.Value("contactInformationStreetName")</p>
+                        <p>@Model.Value("contactInformationPostalCode") @Model.Value("contactInformationCity")</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="info-text">
+                        <h3>Call us</h3>
+                        <p>@Model.Value("contactInformationPhoneNumber1")</p>
+                        <p>@Model.Value("contactInformationPhoneNumber2")</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="info-text">
+                        <h3>Email us</h3>
+                        <p>@Model.Value("contactInformationEmail1")</p>
+                        <p>@Model.Value("contactInformationEmail2")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <!-- contact form -->
+    <section class="contact-form">
+        <div class="container">
+            <h2>Leave us a message for any information.</h2>
+
+            @using (Html.BeginUmbracoForm("Index", "Contact", FormMethod.Post))
+            {
+                <div asp-validation-summary="All"></div>
+
+                <input asp-for="@contactForm.Name" type="text" placeholder="Name*">
+                <input asp-for="@contactForm.Email" type="email" placeholder="Email*">
+                <textarea asp-for="@contactForm.Message" placeholder="Your Message*"></textarea>
+                <div class="d-grid">
+                    <button type="submit" class="btn-theme">Send Message <i class="fa-solid fa-arrow-up-right"></i></button>
+                </div>
+            }
+        </div>
+    </section>
+    
+       <!-- google maps -->
+    <section class="map">
+        <div>
+            <iframe width="100%" height="620" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="@Model.Value("googleMapsUrl")"></iframe>
+        </div>
+    </section>

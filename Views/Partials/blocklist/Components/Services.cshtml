@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.Services)Model.Content;
+}
+
+<div class="service-item">
+    <h3>@content.Value("serviceTitle")</h3>
+    <p>@content.Value("serviceDescription")</p>
+    <a href="@content.Value("serviceLink")" class="arrow-link"><i class="fa-light fa-arrow-right"></i></a>
+</div>

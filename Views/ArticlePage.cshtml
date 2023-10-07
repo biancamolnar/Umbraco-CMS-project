@@ -1,0 +1,95 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ArticlePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Services;
+@inject IUserService UserService;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+
+@{
+	Layout = "_Layout.cshtml";
+	var userService = UserService;
+	var image = Model.Value<IPublishedContent>("articleImage");
+	ViewData["PageTitle"] = @Model.PageTitle;
+}
+
+ @await Html.PartialAsync("_NavSection")
+
+ @await Html.PartialAsync("_BreadcrumbSection")
+
+    <!-- article -->
+    <section class="article">
+        <div class="container">
+            <div class="article-content">
+                <h2>@Model.Name</h2>
+                <div class="article-info">
+                    <p id="date">@Model.CreateDate.ToString("MMM dd, yyyy")</p>
+                    <p id="category"><i class="fa-solid fa-circle"></i>@Model.Value("articleCategory")</p>
+                    <p id="author"><i class="fa-solid fa-circle"></i>@Model.CreatorName(UserService)</p>
+                </div>
+                <img src="@image.Url()" alt="">
+                @Model.Value("articleContent")
+                <div class="tags">
+                    @foreach(var tag in Model.Value<IEnumerable<string>>("articleTags"))
+                    {
+                        <p class="tag">@tag</p>
+                    }
+                </div>
+            </div>
+            <div class="side-content">
+                <form action="#" method="post">
+                    <div class="search-container">
+                      <input type="text" id="search" name="search" placeholder="Type to search..." required>
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                  </form>
+                <div class="recent-posts">
+                    <h3>Recent Posts</h3>
+                    <div class="post-item">
+                        <h4>How To Blow Through Capital At An Incredible Rate</h4>
+                        <p class="date">Jan 14, 2020</p>
+                    </div>
+                    <div class="post-item">
+                        <h4>How To Blow Through Capital At An Incredible Rate</h4>
+                        <p class="date">Jan 14, 2020</p>
+                    </div>
+                    <div class="post-item">
+                        <h4>How To Blow Through Capital At An Incredible Rate</h4>
+                        <p class="date">Jan 14, 2020</p>
+                    </div>
+                    <div class="post-item" id="last-item">
+                        <h4>How To Blow Through Capital At An Incredible Rate</h4>
+                        <p class="date">Jan 14, 2020</p>
+                    </div>
+                </div>
+                <div class="categories">
+                    <h3>Categories</h3>
+                    <div class="category-item">
+                        <h4>Technology -</h4>
+                        <p>20 Posts</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>Freelancing -</h4>
+                        <p>07 Posts</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>Writing -</h4>
+                        <p>16 Posts</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>Marketing -</h4>
+                        <p>11 Posts</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>Business -</h4>
+                        <p>35 Posts</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>Education -</h4>
+                        <p>14 Posts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ @await Html.PartialAsync("_ArticleNewsSection")
