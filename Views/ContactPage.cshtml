@@ -1,6 +1,7 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
 @{
     Layout = "_Layout.cshtml";
     ViewData["PageTitle"] = @Model.Value("pageTitle");
@@ -9,8 +10,6 @@
 
     var contactForm = new Crito.Models.ContactForm();
 }
-
- @await Html.PartialAsync("_NavSection")
  
  @await Html.PartialAsync("_BreadcrumbSection")
 
@@ -53,13 +52,12 @@
 
             @using (Html.BeginUmbracoForm("Index", "Contact", FormMethod.Post))
             {
-                <div asp-validation-summary="All"></div>
-
+                <div asp-validation-summary=All class="text-danger"></div>
                 <input asp-for="@contactForm.Name" type="text" placeholder="Name*">
                 <input asp-for="@contactForm.Email" type="email" placeholder="Email*">
                 <textarea asp-for="@contactForm.Message" placeholder="Your Message*"></textarea>
                 <div class="d-grid">
-                    <button type="submit" class="btn-theme">Send Message <i class="fa-solid fa-arrow-up-right"></i></button>
+                    <button type="submit" class="btn-yellow">Send Message <i class="fa-solid fa-arrow-up-right"></i></button>
                 </div>
             }
         </div>

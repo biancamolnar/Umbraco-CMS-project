@@ -1,4 +1,5 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
@@ -6,9 +7,8 @@
     ViewData["PageTitle"] = @Model.Value("pageTitle");
 	ViewData["PageDescription"] = @Model.Value("pageDescription");
 	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+	
 }
-
- @await Html.PartialAsync("_NavSection")
 
  @await Html.PartialAsync("_ShowcaseSection")
  
@@ -20,7 +20,7 @@
       <div class="features-content">
         <h6>@Model.Value("featuresSectionTitle")</h6>
         <h2>@Model.Value("featuresSectionHeading")</h2>
-        <a class="btn-yellow a" href="@Model.Value("featuresSectionButtonUrl")">@Model.Value("featuresSectionButtonText") <i class="fa-regular fa-arrow-up-right"></i></a>
+        <a class="btn-yellow" href="@Model.Value("featuresSectionButtonUrl")">@Model.Value("featuresSectionButtonText") <i class="fa-regular fa-arrow-up-right"></i></a>
       </div>
       <div class="features-services">
 
@@ -47,14 +47,63 @@
     <img src="~/images/background-effects/white-waves-right.svg" alt="">
   </section> 
   
- @await Html.PartialAsync("_ChooseUsSection")
 
- @await Html.PartialAsync("_ProjectsSection")
-
+  <!-- choose us -->
+  <section class="choose-us">
+    <div class="container">
+      <div class="choose-us-content">
+        <h6>Why Choose Us</h6>
+        <h2>Why We Are The Best Business Consulting Agency</h2>
+        
+        @Html.GetBlockListHtml(Model.Offers)
+    </div>
+      <div class="choose-us-image">
+        @{
+            var chooseUsSectionImage = Model.Value<MediaWithCrops>("chooseUsSectionImage");
+            if (chooseUsSectionImage != null)
+            {
+                <img src="@chooseUsSectionImage.MediaUrl()" alt="@Model.Value("chooseUsSectionTitle")">
+            }
+        }
+      </div>
+    </div>
+  </section>
+  
+    <!-- projects -->
+  <section class="projects">
+    <div class="container">
+      <h6>@Model.Value("projectSectionTitle")</h6>
+      <h2>@Model.Value("projectSectionHeading")</h2>
+      <div class="content">
+        <div class="content-items">
+            @Html.GetBlockListHtml(Model.Projects)
+        </div>
+      </div>
+      <div class="center-btn">
+        <a class="btn-black" href="@Model.Value("projectSectionButtonUrl")">@Model.Value("projectSectionButtonText") <i class="fa-regular fa-arrow-up-right"></i></a>
+      </div>
+    </div>
+  </section>
+  
  @await Html.PartialAsync("_TeamMembersSection")
  
- @await Html.PartialAsync("_TestimonialSection")
- 
+  <!-- testimonial -->
+  <section class="testimonial">
+    <div class="container">
+        <h6>Testimonial</h6>
+        <h2>What Our Client Says</h2>
+        <div class="reviews">
+        
+                @Html.GetBlockListHtml(Model.Reviews)
+
+         </div>
+         <div class="review-button">
+            <a class="btn-black" href="services.html">All Reviews <i class="fa-regular fa-arrow-up-right"></i></a>
+         </div>
+    </div>
+  </section> 
+  
+
  @await Html.PartialAsync("_ArticleNewsSection")
- 
+  
  @await Html.PartialAsync("_NewsletterSection")

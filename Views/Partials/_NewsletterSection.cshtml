@@ -8,14 +8,14 @@
 <section class="newsletter">
     <div class="container">
         <h2>Get News Updates By Signup</h2>
-        @using (Html.BeginUmbracoForm("Index", "Subscribers", FormMethod.Post))
-        {
-            <div asp-validation-summary="All"></div>
+            @using (Html.BeginUmbracoForm("Index", "Subscribers", FormMethod.Post))
+            {
+                <div asp-validation-summary="All"></div>
 
-            <input asp-for="@newsletterForm.Email" type="email" placeholder="Email*">
-            <div class="d-grid">
-                <button type="submit" class="btn-theme">Send Message <i class="fa-solid fa-arrow-up-right"></i></button>
-            </div>
-        }
+                <input asp-for="@newsletterForm.Email" type="email" placeholder="Email*">
+
+                <button type="submit" class="btn-yellow">Subscribe <i class="fa-solid fa-arrow-up-right"></i></button>
+                
+            }
     </div>
 </section>

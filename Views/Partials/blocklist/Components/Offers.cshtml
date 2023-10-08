@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.Offers)Model.Content;
+    var image = content.Value<IPublishedContent>("offersImage");
+}
+
+
+
+<div class="choose-us-item">
+    <img src="@image.Url()">
+    <div class="item-content">
+        <h5>@content.Value("offersTitle")</h5>
+        <p>@content.Value("offersText")</p>
+    </div>
+</div>

@@ -392,90 +392,105 @@ header {
                     margin-bottom: 3px;
                     font-size: 2.7em;
                 }
-                
+
 
 .services {
-  background-color: #F0EFE9;
-  position: relative;
+    background-color: #F0EFE9;
+    position: relative;
 }
-.services .container {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-.services .container h6 {
-  margin-bottom: 15px;
-}
-.services .container h2 {
-  max-width: 504px;
-  margin-bottom: 40px;
-}
-.services .container .umb-block-list {
-  display: flex;
-}
-.services .container .umb-block-list .service-item {
-  background-color: #FFFFFF;
-  padding: 50px 35px 50px 30px;
-  margin-right: 30px;
-  position: relative;
-}
-.services .container .umb-block-list .service-item.service-item::before {
-  content: "";
-  position: absolute;
-  top: 50px;
-  left: 30px;
-  border-top: 2px solid #191919;
-  width: 39px;
-  height: 2px;
-}
-.services .container .umb-block-list .service-item:hover {
-  background-color: #F9D783;
-}
-.services .container .umb-block-list .service-item h3 {
-  margin-top: 45px;
-  margin-bottom: 15px;
-  font-family: "DM Sans", sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-.services .container .umb-block-list .service-item p {
-  line-height: 2;
-  margin-bottom: 90px;
-}
-.services .container .umb-block-list .service-item a {
-  position: absolute;
-  bottom: 50px;
-  right: 30px;
-  background-color: #191919;
-  color: #FFFFFF;
-  padding: 20px 20px 16px 20px;
-  border-radius: 50%;
-}
-.services .container .umb-block-list .service-item a:hover {
-  background-color: #7C7C7C;
-}
-.services .container .umb-block-list .service-item a i {
-  font-size: 26px;
-}
-.services .container .btn-center-bottom {
-  text-align: center;
-  margin-top: 60px;
-}
-.services .container .btn-center-bottom .btn-transparent {
-  padding-left: 50px;
-  padding-right: 50px;
-  font-weight: 500;
-}
-.services img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+
+    .services .container {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+        .services .container h6 {
+            margin-bottom: 15px;
+        }
+
+        .services .container h2 {
+            max-width: 504px;
+            margin-bottom: 40px;
+        }
+
+        .services .container .umb-block-list {
+            display: flex;
+        }
+
+            .services .container .umb-block-list .service-item {
+                background-color: #FFFFFF;
+                padding: 50px 35px 50px 30px;
+                margin-right: 30px;
+                position: relative;
+            }
+
+                .services .container .umb-block-list .service-item.service-item::before {
+                    content: "";
+                    position: absolute;
+                    top: 50px;
+                    left: 30px;
+                    border-top: 2px solid #191919;
+                    width: 39px;
+                    height: 2px;
+                }
+
+                .services .container .umb-block-list .service-item:hover {
+                    background-color: #F9D783;
+                }
+
+                .services .container .umb-block-list .service-item h3 {
+                    margin-top: 45px;
+                    margin-bottom: 15px;
+                    font-family: "DM Sans", sans-serif;
+                    font-size: 22px;
+                    font-weight: 800;
+                    margin-bottom: 12px;
+                }
+
+                .services .container .umb-block-list .service-item p {
+                    line-height: 2;
+                    margin-bottom: 90px;
+                }
+
+                .services .container .umb-block-list .service-item a {
+                    position: absolute;
+                    bottom: 50px;
+                    right: 30px;
+                    background-color: #191919;
+                    color: #FFFFFF;
+                    padding: 20px 20px 16px 20px;
+                    border-radius: 50%;
+                }
+
+                    .services .container .umb-block-list .service-item a:hover {
+                        background-color: #7C7C7C;
+                    }
+
+                    .services .container .umb-block-list .service-item a i {
+                        font-size: 26px;
+                    }
+
+        .services .container .btn-center-bottom {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+            .services .container .btn-center-bottom .btn-transparent {
+                padding-left: 50px;
+                padding-right: 50px;
+                font-weight: 500;
+            }
+
+    .services img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 
 
 .choose-us {
     margin-top: 60px;
-    background-image: url("/images/grey-box.svg");
+    background-image: url("/images/background-effects/grey-box.svg");
     background-position: bottom right;
     background-repeat: no-repeat;
 }
@@ -490,63 +505,73 @@ header {
             max-width: 447px;
         }
 
+            .choose-us .container .choose-us-content .choose-us-item {
+                display: flex;
+                align-items: center;
+                margin-top: 25px;
+            }
+
+                .choose-us .container .choose-us-content .choose-us-item img {
+                    margin-right: 25px;
+                }
+
+                .choose-us .container .choose-us-content .choose-us-item .item-content {
+                    margin-top: 15px;
+                }
+
+                    .choose-us .container .choose-us-content .choose-us-item .item-content h5 {
+                        font-family: "DM Sans", sans-serif;
+                        font-size: 22px;
+                        font-weight: 700;
+                    }
+
         .choose-us .container .choose-us-image {
             margin-top: 30px;
         }
 
 .projects {
-    margin-top: 120px;
-    margin-bottom: 90px;
+  margin-top: 120px;
+  margin-bottom: 90px;
 }
-
-    .projects .container h6 {
-        text-align: center;
-        margin-bottom: 17px;
-    }
-
-    .projects .container h2 {
-        text-align: center;
-        margin-bottom: 90px;
-    }
-
-    .projects .container .content {
-        display: flex;
-        justify-content: center;
-    }
-
-        .projects .container .content .content-items .content-item {
-            margin-bottom: 100px;
-            position: relative;
-        }
-
-            .projects .container .content .content-items .content-item h5 {
-                padding-bottom: 15px;
-                padding-top: 35px;
-                font-size: 22px;
-                font-weight: 700;
-                font-family: "DM Sans", sans-serif;
-                border-bottom: 2px solid #E7E7E7;
-            }
-
-            .projects .container .content .content-items .content-item a {
-                text-decoration: none;
-                font-size: 14px;
-                color: #191919;
-                position: absolute;
-                bottom: -65px;
-                right: 15px;
-                padding: 10px;
-            }
-
-            .projects .container .content .content-items .content-item.item-left {
-                margin-right: 30px;
-            }
-
-    .projects .container .center-btn {
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 95px;
-    }
+.projects .container h6 {
+  text-align: center;
+  margin-bottom: 17px;
+}
+.projects .container h2 {
+  text-align: center;
+  margin-bottom: 90px;
+}
+.projects .container .content .content-items .umb-block-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.projects .container .content .content-items .umb-block-list .content-item {
+  margin-bottom: 100px;
+  position: relative;
+}
+.projects .container .content .content-items .umb-block-list .content-item h5 {
+  padding-bottom: 15px;
+  padding-top: 35px;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  border-bottom: 2px solid #E7E7E7;
+}
+.projects .container .content .content-items .umb-block-list .content-item a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #191919;
+  position: absolute;
+  bottom: -65px;
+  right: 15px;
+  padding: 10px;
+}
+.projects .container .center-btn {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 95px;
+}
 
 .team-members {
     background-color: #F0D082;
@@ -616,38 +641,43 @@ header {
         }
 
         .testimonial .container .reviews {
-            display: flex;
             margin-top: 70px;
             gap: 90px;
         }
 
-            .testimonial .container .reviews .review-item i {
-                color: #F94D1C;
-                margin-bottom: 25px;
+            .testimonial .container .reviews .umb-block-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 50px;
             }
 
-            .testimonial .container .reviews .review-item .client {
-                display: flex;
-                margin-top: 35px;
-                align-items: center;
-            }
-
-                .testimonial .container .reviews .review-item .client img {
-                    margin-right: 15px;
-                }
-
-                .testimonial .container .reviews .review-item .client h5 {
-                    font-family: "DM Sans", sans-serif;
-                    font-weight: 700;
-                    font-size: 22px;
-                    margin-bottom: 5px;
-                }
-
-                .testimonial .container .reviews .review-item .client p {
+                .testimonial .container .reviews .umb-block-list .review-item i {
                     color: #F94D1C;
-                    margin: 0;
-                    font-size: 15px;
+                    margin-bottom: 25px;
                 }
+
+                .testimonial .container .reviews .umb-block-list .review-item .client {
+                    display: flex;
+                    margin-top: 35px;
+                    align-items: center;
+                }
+
+                    .testimonial .container .reviews .umb-block-list .review-item .client img {
+                        margin-right: 15px;
+                    }
+
+                    .testimonial .container .reviews .umb-block-list .review-item .client h5 {
+                        font-family: "DM Sans", sans-serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        margin-bottom: 5px;
+                    }
+
+                    .testimonial .container .reviews .umb-block-list .review-item .client p {
+                        color: #F94D1C;
+                        margin: 0;
+                        font-size: 15px;
+                    }
 
         .testimonial .container .review-button {
             text-align: center;
@@ -690,6 +720,16 @@ header {
 
         .article-news .container .articles .article-item {
             flex: 1;
+        }
+
+        .article-news .container .articles a {
+            text-decoration: none;
+            color: #191919;
+            
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
         }
 
             .article-news .container .articles .article-item .article-img {
@@ -815,6 +855,15 @@ header {
     padding-bottom: 90px;
 }
 
+    .articles .container .articles a {
+        text-decoration: none;
+        color: #191919;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     .articles .container .articles .article-item .article-img {
         position: relative;
         display: inline-block;
@@ -858,6 +907,31 @@ header {
 
     .articles .container .articles .article-item p {
         color: #6A6C71;
+    }
+
+.articles .container .item-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.articles .container .pagination-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 1px;
+    margin-bottom: 120px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #191919;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .articles .container .pagination-button:hover {
+        background-color: #F0EFE9;
+        color: #191919;
+        transition: background-color 0.3s, color 0.3s;
     }
 
 .article .container {

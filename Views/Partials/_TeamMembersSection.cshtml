@@ -1,33 +1,58 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
   <!-- team members -->
   <section class="team-members">
     <div class="container">
       <div class="headline">
-        <h6>Meet Our Team</h6>
-        <h2>Experience Team Members</h2>
-        <a class="btn-yellow" href="#">Browse Team <i class="fa-regular fa-arrow-up-right"></i></a>
+        <h6>@Model.Value("teamSectionTitle")</h6>
+        <h2>@Model.Value("teamSectionHeading")</h2>
+        <a class="btn-yellow" href="@Model.Value("teamSectionButtonUrl")">@Model.Value("teamSectionButtonText") <i class="fa-regular fa-arrow-up-right"></i></a>
       </div>
       <div class="member-cards">
         <div class="member-card">
-          <img src="images/team-img-1.png" alt="">
-          <h5>Kristine Palmer</h5>
-          <p>Chef Operation Officer</p>
+        @{
+            var teamSectionMember1Image = Model.Value<MediaWithCrops>("teamSectionMember1Image");
+            if (teamSectionMember1Image != null)
+            {
+                <img src="@teamSectionMember1Image.MediaUrl()" alt="@Model.Value("teamSectionMember1Name")">
+            }
+        }
+          <h5>@Model.Value("teamSectionMember1Name")</h5>
+          <p>@Model.Value("teamSectionMember1Profession")r</p>
         </div>
         <div class="member-card">
-          <img src="images/team-img-2.png" alt="">
-          <h5>Mark Aubri</h5>
-          <p>Senior Consultant</p>
+        @{
+            var teamSectionMember2Image = Model.Value<MediaWithCrops>("teamSectionMember2Image");
+            if (teamSectionMember2Image != null)
+            {
+                <img src="@teamSectionMember2Image.MediaUrl()" alt="@Model.Value("teamSectionMember2Name")">
+            }
+        }
+          <h5>@Model.Value("teamSectionMember2Name")</h5>
+          <p>@Model.Value("teamSectionMember2Profession")</p>
         </div>
         <div class="member-card">
-          <img src="images/team-img-3.png" alt="">
-          <h5>Kimberly Hansen</h5>
-          <p>Senior Consultant</p>
+        @{
+            var teamSectionMember3Image = Model.Value<MediaWithCrops>("teamSectionMember3Image");
+            if (teamSectionMember3Image != null)
+            {
+                <img src="@teamSectionMember3Image.MediaUrl()" alt="@Model.Value("teamSectionMember3Name")">
+            }
+        }
+          <h5>@Model.Value("teamSectionMember3Name")</h5>
+          <p>@Model.Value("teamSectionMember3Profession")</p>
         </div>
         <div class="member-card">
-          <img src="images/team-img-4.png" alt="">
-          <h5>Justin Willoman</h5>
-          <p>Senior Tech Consultant</p>
+        @{
+            var teamSectionMember4Image = Model.Value<MediaWithCrops>("teamSectionMember4Image");
+            if (teamSectionMember4Image != null)
+            {
+                <img src="@teamSectionMember4Image.MediaUrl()" alt="@Model.Value("teamSectionMember4Name")">
+            }
+        }
+          <h5>@Model.Value("teamSectionMember4Name")</h5>
+          <p>@Model.Value("teamSectionMember4Profession")</p>
         </div>
       </div>
     </div>

@@ -1,12 +1,16 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage 
 
   <!-- companies logos-->
   <section class="companies">
     <div class="container">
-      <img id="logo-1" src="~/images/logos/paperz-logo.svg" alt="company paperz logotype">
-      <img id="logo-2" src="~/images/logos/dorfus-logo.svg" alt="company dorfus logotype">
-      <img id="logo-3" src="~/images/logos/martino-logo.svg" alt="company martino logotype">
-      <img id="logo-4" src="~/images/logos/square-logo.svg" alt="company square logotype">
-      <img id="logo-5" src="~/images/logos/gobona-logo.svg" alt="company gobona logotype">
+        @{
+            var brandImages = Model.Value<IEnumerable<MediaWithCrops>>("brandImages");
+            foreach (var entry in brandImages)
+            {
+                <img id="logo-1" src="@entry.MediaUrl()" alt="">
+            }
+        }
     </div>
   </section>
+  

@@ -24,8 +24,6 @@
     var pagedItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
 
 }
-
- @await Html.PartialAsync("_NavSection")
  
  @await Html.PartialAsync("_BreadcrumbSection")
 
@@ -65,7 +63,7 @@
       <nav class="item-pagination" aria-label="Page navigation">
             @if (pageNumber > 1)
             {
-                <a href="?page=@(pageNumber - 1)" class="item-link-prev" aria-label="Previous">
+                <a href="?page=@(pageNumber - 1)" class="item-link-prev pagination-button" aria-label="Previous">
                     <span aria-hidden="true"><i class="fa-sharp fa-solid fa-chevron-left"></i></span>
                 </a>
             }
@@ -74,17 +72,17 @@
             {
                 if (i == pageNumber)
                 {
-                    <a href="#" class="item-link active">@i</a>
+                    <a href="#" class="item-link active pagination-button">@i</a>
                 }
                 else
                 {
-                    <a href="?page=@i" class="item-link">@i</a>
+                    <a href="?page=@i" class="item-link pagination-button">@i</a>
                 }
             }
 
           @if (pageNumber < Math.Ceiling((decimal)totalItems / itemsPerPage))
           {
-                <a href="?page=@(pageNumber + 1)" class="item-link-next" aria-label="Next">
+                <a href="?page=@(pageNumber + 1)" class="item-link-next pagination-button" aria-label="Next">
                     <span aria-hidden="true"><i class="fa-sharp fa-solid fa-chevron-right"></i></span>
                 </a>
           }
